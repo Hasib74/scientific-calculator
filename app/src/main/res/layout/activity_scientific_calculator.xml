@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.akhil.calculator.ScientificCalculator">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_scientific_calculator" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLay0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/top_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/shift_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8sp" />
+
+            <TextView
+                android:id="@+id/float_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/no_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8sp" />
+
+            <TextView
+                android:id="@+id/degree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/deg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/display_screen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:cursorVisible="true"
+                android:gravity="end"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:text="@string/zero_button"
+                android:textSize="40sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/first_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp" />
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/second_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6">
+
+                <Button
+                    android:id="@+id/shift"
+                    android:layout_width="3sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="1sp"
+                    android:layout_marginRight="1sp"
+                    android:layout_weight="1"
+                    android:padding="8sp"
+                    android:text="@string/shift"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/rad"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="1sp"
+                    android:layout_marginRight="1sp"
+                    android:layout_weight="1"
+                    android:padding="8sp"
+                    android:text="@string/rad"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/abs"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="1sp"
+                    android:layout_marginRight="1sp"
+                    android:layout_weight="1"
+                    android:padding="8sp"
+                    android:text="@string/abs"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/mr"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="1sp"
+                    android:layout_marginRight="1sp"
+                    android:layout_weight="1"
+                    android:padding="8sp"
+                    android:text="@string/mr"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/ms"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="1sp"
+                    android:layout_marginRight="1sp"
+                    android:layout_weight="1"
+                    android:padding="8sp"
+                    android:text="@string/ms"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/m_plus"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="8sp"
+                    android:text="@string/m_plus"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp" />
+
+            <TextView
+                android:id="@+id/rcl"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/no_text" />
+
+            <TextView
+                android:id="@+id/sto"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/no_text" />
+
+            <TextView
+                android:id="@+id/m_minus"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/m_minus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/third_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp" />
+
+            <TextView
+                android:id="@+id/inverse_sin"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/inverse_sin"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/inverse_cos"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/inverse_cos"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/inverse_tan"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/inverse_tan"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/expo"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/expo"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/ten_power_x"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/ten_power"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/fourth_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="6">
+
+            <Button
+                android:id="@+id/hys"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/rnd"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/sin_sign"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/sin_sign"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cos_sign"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/cos_sign"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/tan_sign"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/tan_sign"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/natural_log"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/natural_log"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/log"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/log"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <LinearLayout
+            android:id="@+id/fifth_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp" />
+
+            <TextView
+                android:id="@+id/cube_root"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/cube_root"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/cube"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/cube"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/one_over_x"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/one_over_x"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="" />
+        </LinearLayout>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/sixth_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="6">
+
+            <Button
+                android:id="@+id/x_power_y"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/x_power_y"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/square_root"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/square_root"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/x_square"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/x_square"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/percent"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/percent"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/open_bracket"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/open_bracket"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/close_bracket"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/close_bracket"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/seventh_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp">
+
+            <Button
+                android:id="@+id/seven_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/seven_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/eight_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/eight_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/nine_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/nine_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/single_delete"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/single_delete"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/clear"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <LinearLayout
+            android:id="@+id/eight_row"
+            android:layout_width="match_parent"
+            android:layout_height="32sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/factorial"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/factorial"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/combination"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/combination"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/permutation"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/permutation"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="" />
+        </LinearLayout>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/ninth_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/four_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/four_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/five_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/five_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/six_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/six_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/multiplication"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/multiplication"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/division"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/division"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <LinearLayout
+            android:id="@+id/tenth_row"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pi"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/pi"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/e"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/e"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/comma"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="@string/comma"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4sp"
+                android:text="" />
+        </LinearLayout>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/Eleven_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/one_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/one_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/two_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/two_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/three_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/three_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/addition"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/addition"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/subtraction"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/subtraction"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/twelve_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1sp">
+
+            <Button
+                android:id="@+id/zero_button"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/zero_button"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/dot"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/dot"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/exp"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/exp"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/ans"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/ans"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/equal_sign"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1sp"
+                android:layout_marginRight="1sp"
+                android:layout_weight="1"
+                android:padding="8sp"
+                android:text="@string/equal_sign"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+        </android.support.v7.widget.LinearLayoutCompat>
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
