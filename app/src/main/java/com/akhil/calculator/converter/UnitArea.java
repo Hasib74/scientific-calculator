@@ -2,7 +2,6 @@ package com.akhil.calculator.converter;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -21,8 +20,6 @@ public class UnitArea extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_unit_area);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         firstInput = (EditText) findViewById(R.id.item1);
         secondInput = (EditText) findViewById(R.id.item2);
