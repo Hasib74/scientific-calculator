@@ -14,31 +14,16 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".calculation.StandardCalculation"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".calculation.ScientificCalculation"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".converter.UnitWeight"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".converter.UnitTemperature"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".converter.UnitLength"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".converter.UnitConverter"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".converter.UnitArea"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".calculation.StandardCalculation" />
+        <activity android:name=".calculation.ScientificCalculation" />
+        <activity android:name=".converter.UnitWeight" />
+        <activity android:name=".converter.UnitTemperature" />
+        <activity android:name=".converter.UnitLength" />
+        <activity android:name=".converter.UnitConverter" />
+        <activity android:name=".converter.UnitArea" />
     </application>
 
 </manifest>

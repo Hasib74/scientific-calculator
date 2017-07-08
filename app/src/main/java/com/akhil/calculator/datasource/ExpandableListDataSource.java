@@ -1,4 +1,4 @@
-package com.akhil.calculator.navigation;
+package com.akhil.calculator.datasource;
 
 import android.content.Context;
 
