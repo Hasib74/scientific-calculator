@@ -1,4 +1,4 @@
-package com.akhil.calculator.calculation;
+package com.akhil.calculator.activity.calculation;
 
 import android.os.Bundle;
 import android.view.View;

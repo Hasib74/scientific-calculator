@@ -1,4 +1,4 @@
-package com.akhil.calculator.calculation;
+package com.akhil.calculator.activity.calculation;
 
 class FactorialCalculation {
     private static final int MAX = 1000;

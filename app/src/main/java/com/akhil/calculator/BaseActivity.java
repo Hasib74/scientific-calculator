@@ -15,12 +15,12 @@ import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
 
 import com.akhil.calculator.adapter.CustomExpandableListAdapter;
-import com.akhil.calculator.calculation.ScientificCalculation;
-import com.akhil.calculator.calculation.StandardCalculation;
-import com.akhil.calculator.converter.UnitArea;
-import com.akhil.calculator.converter.UnitLength;
-import com.akhil.calculator.converter.UnitTemperature;
-import com.akhil.calculator.converter.UnitWeight;
+import com.akhil.calculator.activity.calculation.ScientificCalculation;
+import com.akhil.calculator.activity.calculation.StandardCalculation;
+import com.akhil.calculator.activity.conversion.UnitArea;
+import com.akhil.calculator.activity.conversion.UnitLength;
+import com.akhil.calculator.activity.conversion.UnitTemperature;
+import com.akhil.calculator.activity.conversion.UnitWeight;
 import com.akhil.calculator.datasource.ExpandableListDataSource;
 import com.akhil.calculator.util.Calculator;
 import com.akhil.calculator.util.UnitConversion;

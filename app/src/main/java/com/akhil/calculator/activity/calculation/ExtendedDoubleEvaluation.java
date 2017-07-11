@@ -1,4 +1,4 @@
-package com.akhil.calculator.calculation;
+package com.akhil.calculator.activity.calculation;
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 import com.fathzer.soft.javaluator.Function;

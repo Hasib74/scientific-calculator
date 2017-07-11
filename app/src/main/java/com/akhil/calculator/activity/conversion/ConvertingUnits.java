@@ -1,4 +1,4 @@
-package com.akhil.calculator.converter;
+package com.akhil.calculator.activity.conversion;
 
 public class ConvertingUnits {
 
@@ -50,7 +50,7 @@ public class ConvertingUnits {
         }
     }
 
-    static class Length {
+    public static class Length {
         double millimeterToMeter(double millimeter) {
             return (millimeter / THOUSAND);
         }
@@ -117,7 +117,7 @@ public class ConvertingUnits {
 
     }
 
-    static class Temperature {
+    public static class Temperature {
         double fahrenheitToKelvin(double fahrenheit) {
             return ((fahrenheit + 459.67) * 5 / 9);
         }
@@ -135,7 +135,7 @@ public class ConvertingUnits {
         }
     }
 
-    static class Weight {
+    public static class Weight {
         double milligramToKilogram(double milligram) {
             return (milligram / MILLION);
         }

@@ -1,4 +1,4 @@
-package com.akhil.calculator.converter;
+package com.akhil.calculator.activity.conversion;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,24 +9,24 @@ import android.widget.Spinner;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
 
-public class UnitWeight extends AppCompatActivity {
+public class UnitTemperature extends AppCompatActivity {
 
     private EditText firstEditText, secondEditText;
     private Spinner firstSpinner, secondSpinner;
     private int count = 0;
-    private ConvertingUnits.Weight convertingUnit;
+    private ConvertingUnits.Temperature convertingUnit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_unit_weight);
+        setContentView(R.layout.content_unit_temperature);
 
         firstEditText = (EditText) findViewById(R.id.item1);
         secondEditText = (EditText) findViewById(R.id.item2);
         firstSpinner = (Spinner) findViewById(R.id.spinner1);
         secondSpinner = (Spinner) findViewById(R.id.spinner2);
 
-        convertingUnit = new ConvertingUnits.Weight();
+        convertingUnit = new ConvertingUnits.Temperature();
     }
 
     public void onClick(View v) {
@@ -73,7 +73,7 @@ public class UnitWeight extends AppCompatActivity {
 
             case R.id.dot:
                 if (count == 0) {
-                    firstEditText.setText(firstEditText.getText().append(getResources().getString(R.string.dot).trim()));
+                    firstEditText.setText(firstEditText.getText().toString().concat(getResources().getString(R.string.dot)));
                     count++;
                 }
                 break;
@@ -111,52 +111,22 @@ public class UnitWeight extends AppCompatActivity {
         else {
             switch (firstSpinner) {
                 case 0:
-                    calculatedValue = convertingUnit.milligramToKilogram(value);
+                    calculatedValue = convertingUnit.celsiusToKelvin(value);
                     break;
                 case 1:
-                    calculatedValue = convertingUnit.centigramToKilogram(value);
+                    calculatedValue = convertingUnit.fahrenheitToKelvin(value);
                     break;
                 case 2:
-                    calculatedValue = convertingUnit.decagramToKilogram(value);
-                    break;
-                case 3:
-                    calculatedValue = convertingUnit.gramToKilogram(value);
-                    break;
-                case 4:
                     calculatedValue = value;
-                    break;
-                case 5:
-                    calculatedValue = convertingUnit.metricTonnesToKilogram(value);
-                    break;
-                case 6:
-                    calculatedValue = convertingUnit.poundsToKilogram(value);
-                    break;
-                case 7:
-                    calculatedValue = convertingUnit.ouncesToKilogram(value);
                     break;
             }
 
             switch (secondSpinner) {
                 case 0:
-                    calculatedValue = convertingUnit.kilogramToMilligram(calculatedValue);
+                    calculatedValue = convertingUnit.kelvinToCelsius(calculatedValue);
                     break;
                 case 1:
-                    calculatedValue = convertingUnit.kilogramToCentigram(calculatedValue);
-                    break;
-                case 2:
-                    calculatedValue = convertingUnit.kilogramToDecagram(calculatedValue);
-                    break;
-                case 3:
-                    calculatedValue = convertingUnit.kilogramToGram(calculatedValue);
-                    break;
-                case 5:
-                    calculatedValue = convertingUnit.kiloToMetricTonnes(calculatedValue);
-                    break;
-                case 6:
-                    calculatedValue = convertingUnit.kilogramToPounds(calculatedValue);
-                    break;
-                case 7:
-                    calculatedValue = convertingUnit.kilogramToOunces(calculatedValue);
+                    calculatedValue = convertingUnit.kelvinToFahrenheit(calculatedValue);
                     break;
             }
             return calculatedValue;

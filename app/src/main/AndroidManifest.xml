@@ -8,18 +8,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".calculation.StandardCalculation">
+        <activity android:name=".activity.calculation.StandardCalculation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".calculation.ScientificCalculation" />
-        <activity android:name=".converter.UnitWeight" />
-        <activity android:name=".converter.UnitTemperature" />
-        <activity android:name=".converter.UnitLength" />
-        <activity android:name=".converter.UnitConverter" />
-        <activity android:name=".converter.UnitArea" />
+        <activity android:name=".activity.calculation.ScientificCalculation" />
+        <activity android:name=".activity.conversion.UnitWeight" />
+        <activity android:name=".activity.conversion.UnitTemperature" />
+        <activity android:name=".activity.conversion.UnitLength" />
+        <activity android:name=".activity.conversion.UnitArea" />
     </application>
 
 </manifest>

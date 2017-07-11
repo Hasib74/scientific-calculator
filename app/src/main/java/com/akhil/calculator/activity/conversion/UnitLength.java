@@ -1,4 +1,4 @@
-package com.akhil.calculator.converter;
+package com.akhil.calculator.activity.conversion;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,24 +9,24 @@ import android.widget.Spinner;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
 
-public class UnitTemperature extends AppCompatActivity {
+public class UnitLength extends AppCompatActivity {
 
     private EditText firstEditText, secondEditText;
     private Spinner firstSpinner, secondSpinner;
     private int count = 0;
-    private ConvertingUnits.Temperature convertingUnit;
+    private ConvertingUnits.Length convertingUnit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_unit_temperature);
+        setContentView(R.layout.content_unit_length);
 
         firstEditText = (EditText) findViewById(R.id.item1);
         secondEditText = (EditText) findViewById(R.id.item2);
         firstSpinner = (Spinner) findViewById(R.id.spinner1);
         secondSpinner = (Spinner) findViewById(R.id.spinner2);
 
-        convertingUnit = new ConvertingUnits.Temperature();
+        convertingUnit = new ConvertingUnits.Length();
     }
 
     public void onClick(View v) {
@@ -95,38 +95,74 @@ public class UnitTemperature extends AppCompatActivity {
                 break;
 
             case R.id.equal:
-                int item1 = firstSpinner.getSelectedItemPosition();
-                int item2 = secondSpinner.getSelectedItemPosition();
+                int itemPosition = firstSpinner.getSelectedItemPosition();
+                int selectedItemPosition = secondSpinner.getSelectedItemPosition();
                 double value1 = Double.parseDouble(firstEditText.getText().toString());
-                double result = evaluate(item1, item2, value1);
+                double result = evaluate(itemPosition, selectedItemPosition, value1);
                 secondEditText.setText(String.valueOf(result));
                 break;
         }
     }
 
-    public double evaluate(int firstSpinner, int secondSpinner, double value) {
+    public double evaluate(int first_item, int second_item, double value) {
         double calculatedValue = 0.0;
-        if (firstSpinner == secondSpinner)
+        if (first_item == second_item)
             return value;
         else {
-            switch (firstSpinner) {
+            switch (first_item) {
                 case 0:
-                    calculatedValue = convertingUnit.celsiusToKelvin(value);
+                    calculatedValue = convertingUnit.nanometerToMeter(value);
                     break;
                 case 1:
-                    calculatedValue = convertingUnit.fahrenheitToKelvin(value);
+                    calculatedValue = convertingUnit.millimeterToMeter(value);
                     break;
                 case 2:
+                    calculatedValue = convertingUnit.centimeterToMeter(value);
+                    break;
+                case 3:
                     calculatedValue = value;
+                    break;
+                case 4:
+                    calculatedValue = convertingUnit.kilometerToMeter(value);
+                    break;
+                case 5:
+                    calculatedValue = convertingUnit.inchToMeter(value);
+                    break;
+                case 6:
+                    calculatedValue = convertingUnit.footToMeter(value);
+                    break;
+                case 7:
+                    calculatedValue = convertingUnit.yardToMeter(value);
+                    break;
+                case 8:
+                    calculatedValue = convertingUnit.mileToMeter(value);
                     break;
             }
 
-            switch (secondSpinner) {
+            switch (second_item) {
                 case 0:
-                    calculatedValue = convertingUnit.kelvinToCelsius(calculatedValue);
+                    calculatedValue = convertingUnit.meterToNanometer(calculatedValue);
                     break;
                 case 1:
-                    calculatedValue = convertingUnit.kelvinToFahrenheit(calculatedValue);
+                    calculatedValue = convertingUnit.meterToMillimeter(calculatedValue);
+                    break;
+                case 2:
+                    calculatedValue = convertingUnit.meterToCentimeter(calculatedValue);
+                    break;
+                case 4:
+                    calculatedValue = convertingUnit.meterToKilometer(calculatedValue);
+                    break;
+                case 5:
+                    calculatedValue = convertingUnit.meterToInch(calculatedValue);
+                    break;
+                case 6:
+                    calculatedValue = convertingUnit.meterToFoot(calculatedValue);
+                    break;
+                case 7:
+                    calculatedValue = convertingUnit.meterToYard(calculatedValue);
+                    break;
+                case 8:
+                    calculatedValue = convertingUnit.meterToMile(calculatedValue);
                     break;
             }
             return calculatedValue;

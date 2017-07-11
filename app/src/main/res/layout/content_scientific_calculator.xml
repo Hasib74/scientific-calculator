@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".calculation.ScientificCalculation">
+    tools:context=".activity.calculation.ScientificCalculation">
 
     <EditText
         android:id="@+id/first_edit_text"

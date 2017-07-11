@@ -1,4 +1,4 @@
-package com.akhil.calculator.converter;
+package com.akhil.calculator.activity.conversion;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
