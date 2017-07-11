@@ -1,6 +1,6 @@
 package com.akhil.calculator.converter;
 
-class ConvertingUnits {
+public class ConvertingUnits {
 
     private static final int MILLION = 1000000;
     private static final int TEN_THOUSAND = 10000;
@@ -8,44 +8,44 @@ class ConvertingUnits {
     private static final int THOUSAND = 1000;
     private static final int HUNDRED = 100;
 
-    static class Area {
-        double squareMillimeterToMeter(double millimeter) {
+    public static class Area {
+        public double squareMillimeterToMeter(double millimeter) {
             return (millimeter / MILLION);
         }
 
-        double squareMeterToMillimeter(double meter) {
+        public double squareMeterToMillimeter(double meter) {
             return (meter * MILLION);
         }
 
-        double squareCentimeterToMeter(double centimeter) {
+        public double squareCentimeterToMeter(double centimeter) {
             return (centimeter / TEN_THOUSAND);
         }
 
-        double squareMeterToCentimeter(double meter) {
+        public double squareMeterToCentimeter(double meter) {
             return (meter * TEN_THOUSAND);
         }
 
-        double squareKilometerToMeter(double kilometer) {
+        public double squareKilometerToMeter(double kilometer) {
             return (kilometer * MILLION);
         }
 
-        double squareMeterToKilometer(double meter) {
+        public double squareMeterToKilometer(double meter) {
             return (meter / MILLION);
         }
 
-        double acreToMeter(double acre) {
+        public double acreToMeter(double acre) {
             return (acre * ACRE);
         }
 
-        double squareMeterToAcre(double meter) {
+        public double squareMeterToAcre(double meter) {
             return (meter / ACRE);
         }
 
-        double hectareToMeter(double hectare) {
+        public double hectareToMeter(double hectare) {
             return (hectare * TEN_THOUSAND);
         }
 
-        double squareMeterToHectare(double meter) {
+        public double squareMeterToHectare(double meter) {
             return (meter / TEN_THOUSAND);
         }
     }

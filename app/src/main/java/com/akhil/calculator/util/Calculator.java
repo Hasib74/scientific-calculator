@@ -6,7 +6,7 @@ package com.akhil.calculator.util;
 
 public enum Calculator {
     STANDARD_CALCULATOR("Standard Calculator"),
-    SCIENTIFIC_CALCULATOR("SCIENTIFIC CALCULATOR");
+    SCIENTIFIC_CALCULATOR("Scientific Calculator");
 
     private String value;
 

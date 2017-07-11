@@ -1,18 +1,18 @@
 package com.akhil.calculator;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.FrameLayout;
 
 import com.akhil.calculator.adapter.CustomExpandableListAdapter;
 import com.akhil.calculator.calculation.ScientificCalculation;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class CalculatorActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
     private ExpandableListView mExpandableListView;
@@ -37,21 +37,16 @@ public class CalculatorActivity extends AppCompatActivity {
     private Map<String, List<String>> mExpandableListData;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-
+    public void setContentView(@LayoutRes int layoutResID) {
+        drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_main, null);
+        FrameLayout activityContainer = (FrameLayout) drawerLayout.findViewById(R.id.container);
+        getLayoutInflater().inflate(layoutResID, activityContainer, true);
+        super.setContentView(drawerLayout);
         mExpandableListView = (ExpandableListView) findViewById(R.id.navList);
         mExpandableListData = ExpandableListDataSource.getData(this);
         mExpandableListTitle = new ArrayList<>(mExpandableListData.keySet());
         addDrawerItems();
         setupDrawer();
-        if (savedInstanceState == null) {
-            selectFirstItemAsDefault();
-        }
         toggle.syncState();
         drawerLayout.closeDrawer(GravityCompat.START);
         final ActionBar supportActionBar = getSupportActionBar();
@@ -61,9 +56,17 @@ public class CalculatorActivity extends AppCompatActivity {
         }
     }
 
-    private void selectFirstItemAsDefault() {
-        Intent nextActivity = new Intent(getApplicationContext(), StandardCalculation.class);
-        startActivity(nextActivity);
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        assert drawer != null;
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private void setupDrawer() {
@@ -142,11 +145,5 @@ public class CalculatorActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         toggle.onConfigurationChanged(newConfig);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_calculator_drawer, menu);
-        return true;
     }
 }

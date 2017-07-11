@@ -8,16 +8,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="CalculatorActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".calculation.StandardCalculation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".calculation.StandardCalculation" />
         <activity android:name=".calculation.ScientificCalculation" />
         <activity android:name=".converter.UnitWeight" />
         <activity android:name=".converter.UnitTemperature" />

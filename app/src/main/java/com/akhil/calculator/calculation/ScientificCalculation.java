@@ -1,15 +1,15 @@
 package com.akhil.calculator.calculation;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.akhil.calculator.BaseActivity;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
 
-public class ScientificCalculation extends AppCompatActivity implements View.OnClickListener {
+public class ScientificCalculation extends BaseActivity implements View.OnClickListener {
     private static final String RESULT_TOO_BIG = "Result too big!";
     private static final String INVALID = "Invalid!!";
     private static final String HYPHEN = "-";

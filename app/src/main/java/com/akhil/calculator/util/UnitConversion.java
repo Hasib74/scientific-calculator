@@ -5,7 +5,6 @@ package com.akhil.calculator.util;
  */
 
 public enum UnitConversion {
-    UNIT_CONVERTER("Unit Converter"),
     AREA_CONVERTER("Area Converter"),
     LENGTH_CONVERTER("Length Converter"),
     TEMPERATURE_CONVERTER("Temperature Converter"),

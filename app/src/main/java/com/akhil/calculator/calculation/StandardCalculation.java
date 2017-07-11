@@ -1,14 +1,14 @@
 package com.akhil.calculator.calculation;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+import com.akhil.calculator.BaseActivity;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
 
-public class StandardCalculation extends AppCompatActivity {
+public class StandardCalculation extends BaseActivity {
 
     private static final String INVALID_EXPRESSION = "Invalid Expression";
     private static final String POWER = "^";
