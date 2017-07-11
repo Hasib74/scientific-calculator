@@ -85,7 +85,9 @@ public class ScientificCalculation extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         int toggleMode = (int) toggle.getTag();
         int angleMode = ((int) mode.getTag());
-        if (secondEditText.getText().toString().equals(INVALID_EXPRESSION) || secondEditText.getText().toString().equals(RESULT_TOO_BIG))
+        if (secondEditText.getText().toString().equals(INVALID_EXPRESSION)
+                || secondEditText.getText().toString().equals(RESULT_TOO_BIG)
+                || secondEditText.getText().toString().equalsIgnoreCase(INFINITY))
             secondEditText.setText(getResources().getString(R.string.no_text).trim());
         switch (v.getId()) {
 

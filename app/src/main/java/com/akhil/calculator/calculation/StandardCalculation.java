@@ -17,6 +17,7 @@ public class StandardCalculation extends AppCompatActivity {
     private static final String ZERO = "0.0";
     private static final String STANDARD = "STANDARD";
     private static final String EQUALS = " = ";
+    private static final String INFINITY = "Infinity";
     private EditText firstEditText, secondEditText;
     private int count = 0;
 
@@ -32,7 +33,8 @@ public class StandardCalculation extends AppCompatActivity {
     }
 
     public void onClick(View v) {
-        if (secondEditText.getText().toString().equals(INVALID_EXPRESSION))
+        if (secondEditText.getText().toString().equalsIgnoreCase(INVALID_EXPRESSION)
+                || secondEditText.getText().toString().equalsIgnoreCase(INFINITY))
             secondEditText.setText(getResources().getString(R.string.no_text).trim());
         switch (v.getId()) {
             case R.id.number_0:
