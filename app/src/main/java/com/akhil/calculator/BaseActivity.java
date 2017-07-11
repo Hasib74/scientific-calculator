@@ -3,6 +3,7 @@ package com.akhil.calculator;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.LayoutRes;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,14 +14,15 @@ import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
-import com.akhil.calculator.adapter.CustomExpandableListAdapter;
 import com.akhil.calculator.activity.calculation.ScientificCalculation;
 import com.akhil.calculator.activity.calculation.StandardCalculation;
 import com.akhil.calculator.activity.conversion.UnitArea;
 import com.akhil.calculator.activity.conversion.UnitLength;
 import com.akhil.calculator.activity.conversion.UnitTemperature;
 import com.akhil.calculator.activity.conversion.UnitWeight;
+import com.akhil.calculator.adapter.CustomExpandableListAdapter;
 import com.akhil.calculator.datasource.ExpandableListDataSource;
 import com.akhil.calculator.util.Calculator;
 import com.akhil.calculator.util.UnitConversion;
@@ -30,10 +32,12 @@ import java.util.List;
 import java.util.Map;
 
 public class BaseActivity extends AppCompatActivity {
+    private static final String MESSAGE = "Press Back again to Exit.";
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
     private ExpandableListView mExpandableListView;
     private List<String> mExpandableListTitle;
+    private Boolean exit = false;
     private Map<String, List<String>> mExpandableListData;
 
     @Override
@@ -58,14 +62,18 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        assert drawer != null;
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else if (getFragmentManager().getBackStackEntryCount() > 0) {
-            getFragmentManager().popBackStack();
+        if (exit) {
+            finish();
         } else {
-            super.onBackPressed();
+            Toast.makeText(this, MESSAGE,
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            }, 3000);
         }
     }
 
@@ -112,21 +120,27 @@ public class BaseActivity extends AppCompatActivity {
                 if (selectedItem.equalsIgnoreCase(Calculator.STANDARD_CALCULATOR.getValue())) {
                     nextActivity = new Intent(getApplicationContext(), StandardCalculation.class);
                     startActivity(nextActivity);
+                    finish();
                 } else if (selectedItem.equalsIgnoreCase(Calculator.SCIENTIFIC_CALCULATOR.getValue())) {
                     nextActivity = new Intent(getApplicationContext(), ScientificCalculation.class);
                     startActivity(nextActivity);
+                    finish();
                 } else if (selectedItem.equalsIgnoreCase(UnitConversion.AREA_CONVERTER.getValue())) {
                     nextActivity = new Intent(getApplicationContext(), UnitArea.class);
                     startActivity(nextActivity);
+                    finish();
                 } else if (selectedItem.equalsIgnoreCase(UnitConversion.LENGTH_CONVERTER.getValue())) {
                     nextActivity = new Intent(getApplicationContext(), UnitLength.class);
                     startActivity(nextActivity);
+                    finish();
                 } else if (selectedItem.equalsIgnoreCase(UnitConversion.TEMPERATURE_CONVERTER.getValue())) {
                     nextActivity = new Intent(getApplicationContext(), UnitTemperature.class);
                     startActivity(nextActivity);
+                    finish();
                 } else if (selectedItem.equalsIgnoreCase(UnitConversion.WEIGHT_CONVERTER.getValue())) {
                     nextActivity = new Intent(getApplicationContext(), UnitWeight.class);
                     startActivity(nextActivity);
+                    finish();
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);
