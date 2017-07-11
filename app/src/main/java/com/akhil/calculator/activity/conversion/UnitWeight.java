@@ -6,10 +6,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.akhil.calculator.BaseActivity;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
 
-public class UnitWeight extends AppCompatActivity {
+public class UnitWeight extends BaseActivity {
 
     private EditText firstEditText, secondEditText;
     private Spinner firstSpinner, secondSpinner;

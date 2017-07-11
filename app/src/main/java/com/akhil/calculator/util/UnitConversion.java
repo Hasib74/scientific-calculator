@@ -8,7 +8,8 @@ public enum UnitConversion {
     AREA_CONVERTER("Area Converter"),
     LENGTH_CONVERTER("Length Converter"),
     TEMPERATURE_CONVERTER("Temperature Converter"),
-    WEIGHT_CONVERTER("Weight Converter");
+    WEIGHT_CONVERTER("Weight Converter"),
+    UNIT_CONVERSION("Unit Conversion");
 
     private String value;
 

@@ -26,7 +26,7 @@ public class ExpandableListDataSource {
         unitConverter.add(UnitConversion.WEIGHT_CONVERTER.getValue());
 
         expandableListData.put(Calculator.class.getSimpleName(), calculator);
-        expandableListData.put(UnitConversion.class.getSimpleName(), unitConverter);
+        expandableListData.put(UnitConversion.UNIT_CONVERSION.getValue(), unitConverter);
 
         return expandableListData;
     }

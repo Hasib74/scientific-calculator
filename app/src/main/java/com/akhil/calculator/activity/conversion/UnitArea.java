@@ -6,10 +6,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.akhil.calculator.BaseActivity;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
 
-public class UnitArea extends AppCompatActivity {
+public class UnitArea extends BaseActivity {
 
     private EditText firstInput, secondInput;
     private Spinner spinnerOne, spinnerTwo;
