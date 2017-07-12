@@ -1,6 +1,6 @@
 package com.akhil.calculator.activity.conversion;
 
-public class ConvertingUnits {
+class ConvertingUnits {
 
     private static final int MILLION = 1000000;
     private static final int TEN_THOUSAND = 10000;
@@ -8,49 +8,49 @@ public class ConvertingUnits {
     private static final int THOUSAND = 1000;
     private static final int HUNDRED = 100;
 
-    public static class Area {
-        public double squareMillimeterToMeter(double millimeter) {
+    static class Area {
+        double squareMillimeterToMeter(double millimeter) {
             return (millimeter / MILLION);
         }
 
-        public double squareMeterToMillimeter(double meter) {
+        double squareMeterToMillimeter(double meter) {
             return (meter * MILLION);
         }
 
-        public double squareCentimeterToMeter(double centimeter) {
+        double squareCentimeterToMeter(double centimeter) {
             return (centimeter / TEN_THOUSAND);
         }
 
-        public double squareMeterToCentimeter(double meter) {
+        double squareMeterToCentimeter(double meter) {
             return (meter * TEN_THOUSAND);
         }
 
-        public double squareKilometerToMeter(double kilometer) {
+        double squareKilometerToMeter(double kilometer) {
             return (kilometer * MILLION);
         }
 
-        public double squareMeterToKilometer(double meter) {
+        double squareMeterToKilometer(double meter) {
             return (meter / MILLION);
         }
 
-        public double acreToMeter(double acre) {
+        double acreToMeter(double acre) {
             return (acre * ACRE);
         }
 
-        public double squareMeterToAcre(double meter) {
+        double squareMeterToAcre(double meter) {
             return (meter / ACRE);
         }
 
-        public double hectareToMeter(double hectare) {
+        double hectareToMeter(double hectare) {
             return (hectare * TEN_THOUSAND);
         }
 
-        public double squareMeterToHectare(double meter) {
+        double squareMeterToHectare(double meter) {
             return (meter / TEN_THOUSAND);
         }
     }
 
-    public static class Length {
+    static class Length {
         double millimeterToMeter(double millimeter) {
             return (millimeter / THOUSAND);
         }
@@ -117,7 +117,7 @@ public class ConvertingUnits {
 
     }
 
-    public static class Temperature {
+    static class Temperature {
         double fahrenheitToKelvin(double fahrenheit) {
             return ((fahrenheit + 459.67) * 5 / 9);
         }
@@ -135,7 +135,7 @@ public class ConvertingUnits {
         }
     }
 
-    public static class Weight {
+    static class Weight {
         double milligramToKilogram(double milligram) {
             return (milligram / MILLION);
         }

@@ -1,7 +1,6 @@
 package com.akhil.calculator.activity.conversion;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -9,6 +8,7 @@ import android.widget.Spinner;
 import com.akhil.calculator.BaseActivity;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
+import com.akhil.calculator.util.UnitConversion;
 
 public class UnitTemperature extends BaseActivity {
 
@@ -20,6 +20,7 @@ public class UnitTemperature extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(UnitConversion.TEMPERATURE_CONVERTER.getValue());
         setContentView(R.layout.content_unit_temperature);
 
         firstEditText = (EditText) findViewById(R.id.item1);

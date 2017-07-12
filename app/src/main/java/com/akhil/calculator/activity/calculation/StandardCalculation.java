@@ -7,6 +7,7 @@ import android.widget.EditText;
 import com.akhil.calculator.BaseActivity;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
+import com.akhil.calculator.util.Calculator;
 
 public class StandardCalculation extends BaseActivity {
 
@@ -24,6 +25,7 @@ public class StandardCalculation extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(Calculator.STANDARD_CALCULATOR.getValue());
         setContentView(R.layout.content_standard_calculator);
 
         firstEditText = (EditText) findViewById(R.id.first_edit_text);

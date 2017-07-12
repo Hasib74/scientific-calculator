@@ -8,6 +8,7 @@ import android.widget.EditText;
 import com.akhil.calculator.BaseActivity;
 import com.akhil.calculator.R;
 import com.akhil.calculator.util.ApplicationConstant;
+import com.akhil.calculator.util.Calculator;
 
 public class ScientificCalculation extends BaseActivity implements View.OnClickListener {
     private static final String RESULT_TOO_BIG = "Result too big!";
@@ -62,6 +63,7 @@ public class ScientificCalculation extends BaseActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(Calculator.SCIENTIFIC_CALCULATOR.getValue());
         setContentView(R.layout.content_scientific_calculator);
 
         firstEditText = (EditText) findViewById(R.id.first_edit_text);
