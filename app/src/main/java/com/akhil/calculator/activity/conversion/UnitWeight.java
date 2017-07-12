@@ -23,10 +23,10 @@ public class UnitWeight extends BaseActivity {
         setTitle(UnitConversion.WEIGHT_CONVERTER.getValue());
         setContentView(R.layout.content_unit_weight);
 
-        firstEditText = (EditText) findViewById(R.id.item1);
-        secondEditText = (EditText) findViewById(R.id.item2);
-        firstSpinner = (Spinner) findViewById(R.id.spinner1);
-        secondSpinner = (Spinner) findViewById(R.id.spinner2);
+        firstEditText = (EditText) findViewById(R.id.item_1);
+        secondEditText = (EditText) findViewById(R.id.item_2);
+        firstSpinner = (Spinner) findViewById(R.id.spinner_1);
+        secondSpinner = (Spinner) findViewById(R.id.spinner_2);
 
         convertingUnit = new ConvertingUnits.Weight();
     }
@@ -71,6 +71,11 @@ public class UnitWeight extends BaseActivity {
 
             case R.id.number_9:
                 firstEditText.setText(firstEditText.getText().toString().concat(String.valueOf(ApplicationConstant.NINE.getValue())));
+                break;
+
+
+            case R.id.double_0:
+                firstEditText.setText(firstEditText.getText().append(String.valueOf(ApplicationConstant.ZERO.getValue())).append(String.valueOf(ApplicationConstant.ZERO.getValue())));
                 break;
 
             case R.id.dot:

@@ -261,9 +261,10 @@
         android:id="@+id/positive_negative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/number_7"
+        android:layout_alignBaseline="@+id/equal"
+        android:layout_alignBottom="@+id/equal"
+        android:layout_toEndOf="@+id/closeBracket"
+        android:layout_toRightOf="@+id/closeBracket"
         android:onClick="onClick"
         android:text="@string/posneg"
         android:textSize="20sp" />
@@ -272,19 +273,29 @@
         android:id="@+id/number_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/positive_negative"
-        android:layout_toEndOf="@+id/positive_negative"
-        android:layout_toRightOf="@+id/positive_negative"
+        android:layout_below="@+id/number_7"
+        android:layout_toEndOf="@+id/number_7"
+        android:layout_toRightOf="@+id/number_7"
         android:onClick="onClick"
         android:text="@string/zero" />
+
+    <Button
+        android:id="@+id/double_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number_9"
+        android:layout_toEndOf="@+id/number_8"
+        android:layout_toRightOf="@+id/number_8"
+        android:onClick="onClick"
+        android:text="@string/double_zero" />
 
     <Button
         android:id="@+id/dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/number_0"
-        android:layout_toEndOf="@+id/number_0"
-        android:layout_toRightOf="@+id/number_0"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/number_9"
         android:onClick="onClick"
         android:text="@string/dot"
         android:textSize="20sp" />
@@ -340,7 +351,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/number_0"
-        android:layout_toRightOf="@+id/number_0"
+        android:layout_toEndOf="@+id/positive_negative"
+        android:layout_toRightOf="@+id/positive_negative"
         android:onClick="onClick"
         android:text="@string/equals" />
 
@@ -348,9 +360,9 @@
         android:id="@+id/openBracket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/positive_negative"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/equal"
         android:onClick="onClick"
         android:text="@string/open_bracket" />
 
@@ -358,7 +370,8 @@
         android:id="@+id/closeBracket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/equal"
+        android:layout_alignBaseline="@+id/openBracket"
+        android:layout_alignBottom="@+id/openBracket"
         android:layout_toEndOf="@+id/openBracket"
         android:layout_toRightOf="@+id/openBracket"
         android:onClick="onClick"

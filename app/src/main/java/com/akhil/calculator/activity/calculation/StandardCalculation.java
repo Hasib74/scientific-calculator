@@ -80,6 +80,10 @@ public class StandardCalculation extends BaseActivity {
                 secondEditText.setText(secondEditText.getText().append(String.valueOf(ApplicationConstant.NINE.getValue())));
                 break;
 
+            case R.id.double_0:
+                secondEditText.setText(secondEditText.getText().append(String.valueOf(ApplicationConstant.ZERO.getValue())).append(String.valueOf(ApplicationConstant.ZERO.getValue())));
+                break;
+
             case R.id.dot:
                 if (count == 0 && secondEditText.length() != 0) {
                     secondEditText.setText(secondEditText.getText().toString().concat(getResources().getString(R.string.dot)));

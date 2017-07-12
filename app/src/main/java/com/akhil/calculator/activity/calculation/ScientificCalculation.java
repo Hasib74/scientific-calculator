@@ -175,6 +175,10 @@ public class ScientificCalculation extends BaseActivity implements View.OnClickL
                 secondEditText.setText(secondEditText.getText().append(String.valueOf(ApplicationConstant.NINE.getValue())));
                 break;
 
+            case R.id.double_0:
+                secondEditText.setText(secondEditText.getText().append(String.valueOf(ApplicationConstant.ZERO.getValue())).append(String.valueOf(ApplicationConstant.ZERO.getValue())));
+                break;
+
             case R.id.pi:
                 secondEditText.setText(secondEditText.getText().append(getResources().getString(R.string.pi)));
                 break;

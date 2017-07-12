@@ -23,10 +23,10 @@ public class UnitArea extends BaseActivity {
         setTitle(UnitConversion.AREA_CONVERTER.getValue());
         setContentView(R.layout.content_unit_area);
 
-        firstInput = (EditText) findViewById(R.id.item1);
-        secondInput = (EditText) findViewById(R.id.item2);
-        spinnerOne = (Spinner) findViewById(R.id.spinner1);
-        spinnerTwo = (Spinner) findViewById(R.id.spinner2);
+        firstInput = (EditText) findViewById(R.id.item_1);
+        secondInput = (EditText) findViewById(R.id.item_2);
+        spinnerOne = (Spinner) findViewById(R.id.spinner_1);
+        spinnerTwo = (Spinner) findViewById(R.id.spinner_2);
 
         convertingUnits = new ConvertingUnits.Area();
     }
@@ -71,6 +71,10 @@ public class UnitArea extends BaseActivity {
 
             case R.id.number_9:
                 firstInput.setText(firstInput.getText().append(String.valueOf(ApplicationConstant.NINE.getValue())));
+                break;
+
+            case R.id.double_0:
+                firstInput.setText(firstInput.getText().append(String.valueOf(ApplicationConstant.ZERO.getValue())).append(String.valueOf(ApplicationConstant.ZERO.getValue())));
                 break;
 
             case R.id.dot:
