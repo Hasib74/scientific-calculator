@@ -142,7 +142,7 @@ public class StandardCalculation extends BaseActivity {
                 break;
 
             case R.id.divide:
-                operationClicked(getResources().getString(R.string.division));
+                operationClicked(getResources().getString(R.string.divide));
                 break;
 
             case R.id.multiply:

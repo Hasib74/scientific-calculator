@@ -226,7 +226,7 @@ public class ScientificCalculation extends BaseActivity implements View.OnClickL
                     if (newText.equals(getResources().getString(R.string.minus))
                             || newText.endsWith(getResources().getString(R.string.sqrt))
                             || newText.endsWith(getResources().getString(R.string.log))
-                            || newText.endsWith(getResources().getString(R.string.natural_log))
+                            || newText.endsWith(getResources().getString(R.string.naturalLog))
                             || newText.endsWith(getResources().getString(R.string.sin))
                             || newText.endsWith(ASIN)
                             || newText.endsWith(ASIND)
@@ -241,7 +241,7 @@ public class ScientificCalculation extends BaseActivity implements View.OnClickL
                             || newText.endsWith(TANH)
                             || newText.endsWith(CBRT)) {
                         newText = getResources().getString(R.string.no_text).trim();
-                    } else if (newText.endsWith(POWER) || newText.endsWith(getResources().getString(R.string.division).trim()))
+                    } else if (newText.endsWith(POWER) || newText.endsWith(getResources().getString(R.string.divide).trim()))
                         newText = newText.substring(0, newText.length() - 1);
                     else if (newText.endsWith(getResources().getString(R.string.pi).trim()) || newText.endsWith(EXPONENTIAL_POWER))
                         newText = newText.substring(0, newText.length() - 2);
@@ -254,11 +254,11 @@ public class ScientificCalculation extends BaseActivity implements View.OnClickL
                 break;
 
             case R.id.minus:
-                operationClicked(getResources().getString(R.string.subtraction).trim());
+                operationClicked(getResources().getString(R.string.minus).trim());
                 break;
 
             case R.id.divide:
-                operationClicked(getResources().getString(R.string.division).trim());
+                operationClicked(getResources().getString(R.string.divide).trim());
                 break;
 
             case R.id.multiply:
