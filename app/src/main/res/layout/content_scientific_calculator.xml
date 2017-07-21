@@ -13,6 +13,7 @@
 
     <EditText
         android:id="@+id/first_edit_text"
+        style="@style/DisplayEditTextStyle.Result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -24,6 +25,7 @@
 
     <EditText
         android:id="@+id/second_edit_text"
+        style="@style/DisplayEditTextStyle.Formula"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
