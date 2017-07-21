@@ -41,7 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/second_edit_text"
+        android:layout_below="@+id/first_edit_text"
+        android:layout_marginTop="58dp"
         android:onClick="onClick"
         android:text="@string/square"
         android:textAllCaps="false" />
@@ -67,6 +68,16 @@
         android:onClick="onClick"
         android:text="@string/log"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/log"
+        android:layout_toEndOf="@+id/log"
+        android:layout_toRightOf="@+id/log"
+        android:onClick="onClick"
+        android:text="@string/clear" />
 
     <Button
         android:id="@+id/sin"
@@ -95,11 +106,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/cos"
-        android:layout_toEndOf="@+id/cos"
-        android:layout_toRightOf="@+id/cos"
+        android:layout_alignLeft="@+id/log"
+        android:layout_alignStart="@+id/log"
         android:onClick="onClick"
         android:text="@string/tan"
         android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/backSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tan"
+        android:layout_alignLeft="@+id/clear"
+        android:layout_alignStart="@+id/clear"
+        android:onClick="onClick"
+        android:text="@string/backspace" />
 
     <Button
         android:id="@+id/toggle"
@@ -136,25 +158,6 @@
         android:text="@string/sqrt"
         android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/clear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tan"
-        android:layout_toEndOf="@+id/log"
-        android:layout_toRightOf="@+id/log"
-        android:onClick="onClick"
-        android:text="@string/clear" />
-
-    <Button
-        android:id="@+id/backSpace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/sqrt"
-        android:layout_toEndOf="@+id/tan"
-        android:layout_toRightOf="@+id/tan"
-        android:onClick="onClick"
-        android:text="@string/backspace" />
 
     <Button
         android:id="@+id/pi"
@@ -251,8 +254,8 @@
         android:id="@+id/number_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/minus"
-        android:layout_alignBottom="@+id/minus"
+        android:layout_alignBaseline="@+id/number_8"
+        android:layout_alignBottom="@+id/number_8"
         android:layout_toEndOf="@+id/number_8"
         android:layout_toRightOf="@+id/number_8"
         android:onClick="onClick"
@@ -263,10 +266,9 @@
         android:id="@+id/positive_negative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/equal"
-        android:layout_alignBottom="@+id/equal"
-        android:layout_toEndOf="@+id/closeBracket"
-        android:layout_toRightOf="@+id/closeBracket"
+        android:layout_alignBottom="@+id/double_0"
+        android:layout_toEndOf="@+id/double_0"
+        android:layout_toRightOf="@+id/double_0"
         android:onClick="onClick"
         android:text="@string/posneg"
         android:textSize="20sp" />
@@ -295,6 +297,7 @@
         android:id="@+id/dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/number_0"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/number_9"
@@ -352,9 +355,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/number_0"
-        android:layout_toEndOf="@+id/positive_negative"
-        android:layout_toRightOf="@+id/positive_negative"
+        android:layout_alignTop="@+id/mode"
+        android:layout_toEndOf="@+id/double_0"
+        android:layout_toRightOf="@+id/double_0"
         android:onClick="onClick"
         android:text="@string/equals" />
 
@@ -362,7 +365,7 @@
         android:id="@+id/openBracket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/positive_negative"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="onClick"
@@ -383,13 +386,15 @@
         android:id="@+id/mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/minus"
-        android:layout_toEndOf="@+id/number_9"
-        android:layout_toRightOf="@+id/number_9"
+        android:layout_alignTop="@+id/closeBracket"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toLeftOf="@+id/equal"
+        android:layout_toRightOf="@+id/number_0"
+        android:layout_toStartOf="@+id/equal"
         android:onClick="onClick"
         android:text="@string/mode"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        tools:ignore="RtlHardcoded" />
 
 </RelativeLayout>
